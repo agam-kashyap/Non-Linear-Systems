@@ -1,5 +1,9 @@
 # Non-Linear Systems: Logistic Maps and Chaos
 
+***Suggested Method of Viewing the report***
+Since this is a big report, for your convinience please visit this website to see the report clearly
+[non-linear-systems-group10](https://logistics-map-group10.netlify.com/)
+
 The logistic map is a model of population growth that exhibits many different types of behavior, dependingon the value of a few constants.
 The equation then, for somepopulation $X_n+1$ after an arbitrary time step, starting with population $X_n$ is:
 
@@ -137,7 +141,7 @@ Corresponding graphs with r values ranging from 1 to 4
 >after 3.57, a smal change in the value 
 >of r can make the system change suddenly from 
 >chaotic to stable and vice versa. 
-
+ 
 ### Time-Series Graphs made from Value of r using r = 3.847XXX 
 
 ***Code used by Aarushi***
@@ -292,6 +296,33 @@ plt.show()
 **Bifurcation Graph from Code 1**
 
 ![](bifurcation_agam1.png)
+
+***Code 2 by Aarushi***
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+P=np.linspace(0.7,4,50000)
+m=0.7
+X = []
+Y = []
+
+for u in P:
+    X.append(u)
+    m = np.random.random()
+    for n in range(1500):
+      m=(u*m)*(1-m)
+    Y.append(m)
+plt.xlabel('r', fontsize=10)
+plt.ylabel('x_n', fontsize=10)
+plt.title(r'$X_n$ vs r bifurcation graph')
+plt.plot(X, Y, ",", color='k')
+plt.show()
+```
+
+**Bifurcation Graph from Code2**
+
+![](bifurcatiob_diagram.png)
 
 # Feigenbaum Constants 
 

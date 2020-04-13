@@ -365,10 +365,13 @@ code {
           : 'default'
     });
   </script>
-<h1 id="non-linear-systems-logistic-maps-and-chaos">Non-Linear Systems: Logistic Maps and Chaos</h1>
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="NonLinear_Systems_Logistic_Maps_and_Chaos_0"></a>Non-Linear Systems: Logistic Maps and Chaos</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="5"><strong><em>Suggested Method of Viewing the report</em></strong><br>
+Since this is a big report, for your convinience please visit this website to see the report clearly<br>
+<a href="https://logistics-map-group10.netlify.com/">non-linear-systems-group10</a></p>
 <p>The logistic map is a model of population growth that exhibits many different types of behavior, dependingon the value of a few constants.
-The equation then, for somepopulation $X_n+1$ after an arbitrary time step, starting with population $X_n$ is:</p>
-<p>$X_n+1$ = r*$X_n$*(1 - $X_n$)</p>
+The equation then, for somepopulation X<sub>n+1</sub> after an arbitrary time step, starting with population X<sub>n</sub> is:</p>
+<p>X<sub>n+1</sub> = r*X<sub>n</sub>*(1 - X<sub>n</sub>)</p>
 <h3 id="experiment-report-by-group-10a">Experiment Report by Group 10A</h3>
 <ul>
 <li>Aarushi Goenka IMT2018001</li>
@@ -451,7 +454,7 @@ plt.show()
 <tbody>
 <tr>
 <td style="text-align:center">&lt;= 1</td>
-<td style="text-align:center">Population Will Die i.e. $X_n$ goes to 0</td>
+<td style="text-align:center">Population Will Die i.e. X<sub>n</sub> goes to 0</td>
 </tr>
 <tr>
 <td style="text-align:center">1.5</td>
@@ -643,14 +646,35 @@ plt.show()
 </div></code></pre>
 <p><strong>Bifurcation Graph from Code 1</strong></p>
 <p><img src="bifurcation_agam1.png" alt=""></p>
+<p><em><strong>Code 2 by Aarushi</strong></em></p>
+<pre class="hljs"><code><div>import matplotlib.pyplot as plt
+import numpy as np
+P=np.linspace(0.7,4,50000)
+m=0.7
+X = []
+Y = []
+
+for u in P:
+    X.append(u)
+    m = np.random.random()
+    for n in range(1500):
+      m=(u*m)*(1-m)
+    Y.append(m)
+plt.xlabel('r', fontsize=10)
+plt.ylabel('x_n', fontsize=10)
+plt.title(r'$X_n$ vs r bifurcation graph')
+plt.plot(X, Y, &quot;,&quot;, color='k')
+plt.show()
+</div></code></pre>
+<p><strong>Bifurcation Graph from Code2</strong></p>
+<p><img src="bifurcatiob_diagram.png" alt=""></p>
 <h1 id="feigenbaum-constants">Feigenbaum Constants</h1>
 <p>The first Feigenbaum constant is the limiting ratio of each bifurcation interval to the next between every period doubling, of a one-parameter map</p>
-<p>$x_i+1$ = f( $x_i$ )</p>
+<p>x<sub>i+1</sub> = f( x<sub>i</sub> )</p>
 <p>where f(x) is a function parameterized by the bifurcation parameter a.</p>
 <p>It is given by the limit</p>
-<p>$\delta$ = $\displaystyle \lim_{n \to \infty} g(x)$ = 4.669201609....</p>
-<p>where g(x) = $\frac{a_{n-1} - a_{n-2}}{a_n - a_{n-1}}$</p>
-<p>where $a_n$ are discrete values of a at the n-th period doubling.</p>
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2dce01d320459df0cb12f281c1ca398651718fdd" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.338ex; width:42.256ex; height:5.676ex;" alt="{\displaystyle \delta =\lim _{n\to \infty }{\frac {a_{n-1}-a_{n-2}}{a_{n}-a_{n-1}}}=4.669\,201\,609\,\ldots ,}">
+<p>where a<sub>n</sub> are discrete values of a at the n-th period doubling.</p>
 <p><em><strong>Observations (Done by Abhigna and Kashif)</strong></em></p>
 <table>
 <thead>
@@ -658,7 +682,7 @@ plt.show()
 <th style="text-align:center">r1</th>
 <th style="text-align:center">r2</th>
 <th style="text-align:center">r3</th>
-<th style="text-align:center">g(x)</th>
+<th style="text-align:center">&delta;</th>
 </tr>
 </thead>
 <tbody>
